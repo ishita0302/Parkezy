@@ -7,7 +7,14 @@ Salient features:
 2.	Integrated payment mechanism 
 3.	User verification
 
-***User View Recording:
+***User View Recording: 
+
+https://github.com/ishita0302/Parkezy/assets/114524123/9e0ce1c7-091d-405e-9fb9-9b82ae07adce
 
 ***Snaps:
+![image](https://github.com/ishita0302/Parkezy/assets/114524123/91ad92c4-2375-4810-b3a8-767aeb6e5726)
+![image](https://github.com/ishita0302/Parkezy/assets/114524123/76cfcf65-dae8-413c-827d-0d45e78a87f1)
+![image](https://github.com/ishita0302/Parkezy/assets/114524123/349354ec-e005-4297-b6ac-b7f7e0d6e825)
+
+
 

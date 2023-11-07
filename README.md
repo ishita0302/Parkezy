@@ -5,5 +5,9 @@ The primary objective is to bring vacant area, which can be utilized for parking
 Salient features:
 1.	On demand booking using web application 
 2.	Integrated payment mechanism 
-3.	User verification 
+3.	User verification
+
+***User View Recording:
+
+***Snaps:
 

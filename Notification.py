@@ -5,7 +5,7 @@ from flask_socketio import SocketIO
 import redis
 #from worker import r
 
-app=Flask(__name__,template_folder='C:\Users\vanda\OneDrive\Desktop\New folder\templates')
+app=Flask(__name__)
 app.config["SECRET_KEY"]="abcd123"
 
 r=redis.Redis()
@@ -35,7 +35,7 @@ def push_notification_job(data):
 def index():
     return "<h1> Index Page </h1>"
 
-@app.route("/int:<message>",methods=["GET"])
+@app.route("/push_notification<string:message>",methods=["GET"])
 def push_notification(message):
     data={"new_notification":1}
     push=q.enqueue(message)

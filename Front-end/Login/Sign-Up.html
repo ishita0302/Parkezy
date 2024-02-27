@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     
     <title>Sign Up Screen</title>
 </head>
@@ -54,25 +55,6 @@
                 <img class="rounded-2xl" src="image_login.jpg" alt="IMAGE">
             </div>
         </div>
-    </section>        
-    <script>
-        function togglePasswordVisibility() {
-            var passwordInput = document.getElementById("passwordInput");
-            passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-        }
-
-        function validateForm() {
-            var passwordInput = document.getElementById("passwordInput");
-            var password = passwordInput.value;
-            var passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-
-            if (!passwordRegex.test(password)) {
-                alert("Password must have at least one special character, one uppercase letter, one lowercase letter, and one number");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
+    </section> 
 </body>
 </html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+           
+            
+            font-family: Arial, sans-serif;
+        }
+        #main{
+            background-color: black;
+            color:white;
+        }
+        #header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            position:sticky;
+        }
+        #header img {
+            height: 200px;
+            margin: 20px;
+            
+        }
+        #icons {
+
+            color: purple;
+            display:flex;
+            justify-content:space-around;
+            font-size: 70px;
+            position:sticky;
+        }
+        .c {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        # h1{
+            display:block;
+            border:20px;
+            padding:50px;
+            margin-left:120px;
+
+        }
+       
+        # searchcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border:10px;
+            height:280px;
+            width:300px;
+            margin-left:120px;
+            align-items:center;
+            border-radius:5%;
+            padding:120px;
+            background-color:#100E0D;
+        }
+        .search-input {
+            display: flex;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            height:40px;
+            margin-left:120px;
+            margin:40px;
+        }
+        .submit-button{
+            border-radius:5px;
+            height:40px;
+            width:80px;
+            border:none;
+            margin-left:40px;
+        }
+        .submit-button:hover{
+            background-color: #0056b3;
+        }
+        .image-container {
+            margin-right: 180px;
+        }
+        .parked-image {
+            width:500px;
+            height: auto;
+            margin:40px;
+        }
+        .heading{
+            display:block;
+            margin-left:120px;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            height:200px;
+            display:flex;
+            justify-content:space evenly;
+            align-items:center;
+            background-color: #333;
+            border-radius: 5px;
+            margin:20px:
+            padding:50px;
+        }
+        .result img {
+            width: 200px;
+            height: auto;
+            border-radius:45%;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <div id="header">
+        <div id="icons">
+            <img src="car.png" alt="Car Icon"></img>
+            <img src="bike.png" alt="Motorbike Icon"></img>
+            <img src="cycle.png" alt="Cycle Icon"></img>
+        </div>
+    </div>
+    <div class="container">
+        <div class="heading"><h1>Go Anywhere with Parkezy</h1></div>
+        <div class="c">
+            
+        <form id="searchcontainer">
+            <input type="text" class="search-input" id="source" placeholder="Enter source">
+            <input type="text" class="search-input" id="destination" placeholder="Enter destination">
+            <input type="submit" value="See prices" class="submit-button">
+        </form>
+        <div class="image-container">
+            <img src="parked.webp" alt="Parked Image" class="parked-image">
+        </div>
+    </div></div>
+    <div id="results"></div>
+ 
+
+    <script>
+        
+        console.log("working");
+        const searchForm = document.getElementById('searchcontainer');
+        const resultsContainer = document.getElementById('results');
+        const source = document.getElementById('source').value;
+        const destination = document.getElementById('destination').value;
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Clear previous results
+            resultsContainer.innerHTML = '';
+
+            // Get source and destination inputs
+            const source = document.getElementById('source').value;
+            const destination = document.getElementById('destination').value;
+
+
+            const results = [
+            { name: 'Place 1', description: 'Description 1', rating: 4.5, price: '$$', distance: '5 miles',image:'house1.jpg'},
+            { name: 'Place 2', description: 'Description 2', rating: 4.2, price: '$$', distance: '8 miles',image:'house2.jpeg' },
+            { name: 'Place 3', description: 'Description 3', rating: 4.7, price: '$$$', distance: '12 miles',image:'house3.jfif'}
+        ];
+
+
+        results.forEach(result => {
+            const resultElement = document.createElement('div');
+            resultElement.classList.add('result');
+
+            const imageElement = document.createElement('img');
+            imageElement.src = result.image;
+            imageElement.alt = result.name;
+
+            const infoElement = document.createElement('div');
+            infoElement.innerHTML = `<h2>${result.name}</h2>
+                                     <p>${result.description}</p>
+                                     <p>Rating: ${result.rating}</p>
+                                     <p>Price: ${result.price}</p>
+                                     <p>Distance: ${result.distance}</p>`;
+
+            resultElement.appendChild(infoElement);
+            
+            resultElement.appendChild(imageElement);
+            resultsContainer.appendChild(resultElement);
+        });
+
+
+            // Display a text
+            const textElement = document.createElement('p');
+            textElement.textContent = `You searched for a trip from ${source} to ${destination}.`;
+            resultsContainer.appendChild(textElement);
+        });
+
+        
+
+    </script>
+
+</body>
+</html>
